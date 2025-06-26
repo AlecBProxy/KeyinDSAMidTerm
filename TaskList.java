@@ -1,8 +1,10 @@
 public class TaskList {
+    private String ownerName;
     private Task head;
     private int size;
 
-    public TaskList() {
+    public TaskList(String ownerName) {
+        this.ownerName = ownerName;
         this.head = null;
         this.size = 0;
     }
@@ -20,7 +22,7 @@ public class TaskList {
             current.setNext(newTask);
         }
         size++;
-        System.out.println("Task added: " + description);
+        System.out.println("Task added: " + description + " --- for user: " + ownerName);
     }
 
     public boolean markTaskCompleted(String description) {
@@ -29,7 +31,7 @@ public class TaskList {
         while (current != null) {
             if (current.getDescription().equalsIgnoreCase(description)) {
                 current.markCompleted();
-                System.out.println("Task marked as completed: " + description);
+                System.out.println("\nTask marked as completed: " + description + " --- belonging to: " + ownerName);
                 return true;
             }
             current = current.getNext();
@@ -37,6 +39,17 @@ public class TaskList {
         System.out.println("Task not found: " + description);
         return false;
     }
+
+    public int countCompletedTasks() {
+        int count = 0;
+        Task current = head;
+        while (current != null) {
+            if (current.isCompleted()) count++;
+            current = current.getNext();
+        }
+        return count;
+    }
+
 
     public void printAllTasks() {
         if (head == null) {
@@ -56,6 +69,10 @@ public class TaskList {
 
     public int getSize() {
         return size;
+    }
+
+    public Task getHead() {
+        return head;
     }
 
     public boolean isEmpty() {

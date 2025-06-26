@@ -1,6 +1,6 @@
 public class Main {
     private static final int MAX_USERS = 10;
-    private static User[] users = new User[MAX_USERS]; // Array to store users
+    private static User[] users = new User[MAX_USERS];
     private static int userCount = 0;
 
     public static void main(String[] args) {
@@ -111,16 +111,19 @@ public class Main {
 
         int totalTasks = 0;
 
-        // Revisit for further development
         int completedTasks = 0;
 
         for (int i = 0; i < userCount; i++) {
             TaskList userTasks = users[i].getTodoList();
             totalTasks += userTasks.getSize();
+            completedTasks += userTasks.countCompletedTasks();
+
 
             System.out.println(users[i].getName() + " has " + userTasks.getSize() + " tasks");
         }
 
         System.out.println("Total tasks across all users: " + totalTasks);
+        System.out.println("Total completed tasks across all users: " + completedTasks);
+
     }
 }

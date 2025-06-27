@@ -6,14 +6,12 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("=== To-Do List Manager ===\n");
 
-        // Create users and add them to the array
         createUser("Alec");
         createUser("Alan");
         createUser("Alice");
 
         System.out.println("\n--- Adding Tasks ---");
 
-        // Test set data
         addTaskToUser("Alec", "Buy groceries");
         addTaskToUser("Alec", "Walk the dog");
         addTaskToUser("Alec", "Finish sprint work");

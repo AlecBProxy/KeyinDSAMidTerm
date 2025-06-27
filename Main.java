@@ -51,7 +51,7 @@ public class Main {
             return false;
         }
 
-        // Check if user already exists
+        // Validation for non-duplicates
         for (int i = 0; i < userCount; i++) {
             if (users[i].getName().equalsIgnoreCase(name)) {
                 System.out.println("User already exists: " + name);

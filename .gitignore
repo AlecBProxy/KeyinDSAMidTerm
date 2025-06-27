@@ -1,0 +1,35 @@
+# === Java Build Files ===
+*.class
+*.jar
+*.war
+*.ear
+
+# === Build Directories ===
+/out/
+/target/
+/bin/
+
+# === IntelliJ IDEA ===
+.idea/
+/*.iml
+
+# === Logs and Temp Files ===
+*.log
+*.tmp
+*.swp
+
+# === OS Specific ===
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# === Maven/Gradle Wrapper Junk ===
+/.mvn/
+/.gradle/
+!gradle/wrapper/gradle-wrapper.jar
